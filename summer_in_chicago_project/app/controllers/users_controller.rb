@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  get '/' do
-  erb :events
+ 	
+
+ get '/home' do
+ 	erb :home
+ end	
+
+  get '/?' do
+ 	 erb :event
   end
 
-  post '/?' do
-    #
-  end
 end
