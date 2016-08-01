@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   get '/' do
-  erb :main
+  erb :events
   end
 
   post '/?' do
