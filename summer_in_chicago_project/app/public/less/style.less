@@ -11,6 +11,7 @@
 
 body > header {
   background: @paleBlue;
+  border-bottom: 2px solid darken(@white, 10%);
 
 
   .container {
@@ -37,12 +38,11 @@ body > header {
       float: right;
 
       li {
-        color: @white;
         display: inline-block;
         font-size: 1.3rem;
         margin-right: 1em;
 
-        &:last-child { margin-right: 0; }
+        &:last-child { margin-right: 5px; }
       }
     }
   }
@@ -50,12 +50,28 @@ body > header {
 
 body > main {
   background: @paleBlue;
+
+  form {
+    text-align: center;
+    padding:    10px;
+   color:      @black;
+
+    input {
+      width:    400px;
+      padding:  5px 10px;
+      margin:   4px 0;
+      border-radius: 4px;
+      border:   1px solid @black;
+      box-sizing:    border-box;
+      display:  inline-block; 
+    }
+  }
 }
 
-form {
-  text-align: center;
-  padding:    10px;
-  color:      @black;
+.mid-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: @yellow; 
 }
 
 h2, p {
@@ -64,20 +80,5 @@ h2, p {
 }
 
 
-.mid-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background: @yellow; 
-}
 
 
-
-input {
-  width:    400px;
-  padding:  5px 10px;
-  margin:   4px 0;
-  border-radius: 4px;
-  border:   1px solid @black;
-  box-sizing:    border-box;
-  display:  inline-block; 
-}

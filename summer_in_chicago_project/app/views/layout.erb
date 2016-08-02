@@ -4,23 +4,25 @@
   <title>Free Events</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-  <header class="container">
-    <div class="row">
-      <div class="col-8">
-        <h1>Summer in Chicago</h1>
-      </div>
-      <nav class="col-4">
-        <ul>
-          <li><a href="/aboutme">Events</a></li>
-          <li><a href="/projects">Profile</a></li>
-          <li><a href="/contact">Create Events</a></li>
-        </ul>
-      </nav>
+ 
+<header class="container">
+  <div class="row">
+    <div class="col-7 centered-text">
+      <h1>Summer in Chicago</h1>
     </div>
-  </header>
+    <nav class="col-5">
+        <ul>
+          <li><a href="/">Events</a></li>
+          <li><a href="/users">Profile</a></li>
+          <li><a href="/users/create">Create Events</a></li>
+        </ul>
+    </nav>
+  </div>
+</header>
 
-    <%= yield %>
+<body>
+
+  <%= yield %>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script> 
