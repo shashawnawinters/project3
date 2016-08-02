@@ -1,5 +1,6 @@
 body > header {
   background: #9DD9D2;
+  border-bottom: 2px solid #dedede;
 }
 body > header .container {
   padding: 0 20px;
@@ -19,33 +20,22 @@ body > header nav ul {
   float: right;
 }
 body > header nav ul li {
-  color: #f7f7f7;
   display: inline-block;
   font-size: 1.3rem;
   margin-right: 1em;
 }
 body > header nav ul li:last-child {
-  margin-right: 0;
+  margin-right: 5px;
 }
 body > main {
   background: #9DD9D2;
 }
-form {
+body > main form {
   text-align: center;
   padding: 10px;
   color: #272727;
 }
-h2,
-p {
-  color: #272727;
-  text-align: center;
-}
-.mid-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background: #F4D06F;
-}
-input {
+body > main form input {
   width: 400px;
   padding: 5px 10px;
   margin: 4px 0;
@@ -53,4 +43,14 @@ input {
   border: 1px solid #272727;
   box-sizing: border-box;
   display: inline-block;
+}
+.mid-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: #F4D06F;
+}
+h2,
+p {
+  color: #272727;
+  text-align: center;
 }
