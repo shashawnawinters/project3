@@ -1,10 +1,14 @@
 body > header {
-  background: #00008B;
+  background: #9DD9D2;
+}
+body > header .container {
+  padding: 0 20px;
 }
 body > header .row {
   padding: 1.5rem 0;
 }
 body > header h1 {
+  color: #392F5A;
   font-family: 'helvitica Neue', Helvetica, Arial, sans serif;
 }
 body > header nav ul {
@@ -15,6 +19,7 @@ body > header nav ul {
   float: right;
 }
 body > header nav ul li {
+  color: #f7f7f7;
   display: inline-block;
   font-size: 1.3rem;
   margin-right: 1em;
@@ -23,14 +28,24 @@ body > header nav ul li:last-child {
   margin-right: 0;
 }
 body > main {
-  background: #00008B;
+  background: #9DD9D2;
+}
+h2,
+p,
+input {
+  color: #272727;
+  text-align: center;
 }
 .mid-section {
   padding-top: 120px;
   padding-bottom: 120px;
-  background: url('../img/chicagonight.jpeg');
+  background: #F4D06F;
 }
-.mid-section h2,
-.mid-section p {
-  color: #272727;
+img,
+object,
+embed {
+  max-width: 100%;
+}
+img {
+  height: auto;
 }
