@@ -64,7 +64,7 @@ class UsersController < ApplicationController
 
   get '/membersonly/?' do
     p session
-    if session[:is_logged_in] 
+    if session[:is_logged_in]  
       'Hello ' 
     else
       p session
