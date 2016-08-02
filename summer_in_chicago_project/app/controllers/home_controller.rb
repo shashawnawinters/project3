@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   get '/' do 
-    erb :home
+    erb :event
   end
 end

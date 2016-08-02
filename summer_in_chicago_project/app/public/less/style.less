@@ -13,6 +13,16 @@ body > header {
   background: @paleBlue;
 
 
+  .container {
+    padding: 0 20px;
+  }
+
+  .row {
+    padding: 1.5rem 0;
+  }
+
+
+
   h1 {
     color: @purple;
     font-family: 'helvitica Neue', Helvetica, Arial,  sans serif;
@@ -42,7 +52,13 @@ body > main {
   background: @paleBlue;
 }
 
-h2, p, input{
+form {
+  text-align: center;
+  padding:    10px;
+  color:      @black;
+}
+
+h2, p {
   color: @black;
   text-align: center;
 }
@@ -55,10 +71,13 @@ h2, p, input{
 }
 
 
-img, object, embed {
-  max-width: 100%;
-}
 
-img {
-  height: auto;
+input {
+  width:    400px;
+  padding:  5px 10px;
+  margin:   4px 0;
+  border-radius: 4px;
+  border:   1px solid @black;
+  box-sizing:    border-box;
+  display:  inline-block; 
 }
