@@ -18,8 +18,11 @@ class UsersController < ApplicationController
         user = User.create username: params['username'], email: params['email'], password: password
         if user 
           'User was added'
-           p user
-           erb :event
+          session[:is_logged_in] = true
+          session[:user_id] = user.id
+          p session
+          user.to_json
+          
         else
           'Error'
         end
@@ -40,14 +43,33 @@ class UsersController < ApplicationController
       password = BCrypt::Password.new(user.password)
 
       if password == params['password']
-        'Welcome Back'
+        session[:is_logged_in] = true
+        session[:user_id] = user.id
+        p session
+        'Welcome Back ' + user.username
       else
         'Incorrect Username or Password'
       end
     else
       'Username could not be found'
     end
-    
+  end
+
+  get '/logout/?' do
+    session[:is_logged_in] = false
+    session[:user_id] = nil
+    p session
+    'You are logged out'
+  end
+
+  get '/membersonly/?' do
+    p session
+    if session[:is_logged_in]  
+      'Hello ' 
+    else
+      p session
+      'Unauthorized Access'
+    end
   end
 
   get '/' do
