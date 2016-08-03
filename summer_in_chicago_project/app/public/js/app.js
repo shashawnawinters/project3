@@ -6,7 +6,8 @@ $('#search').on("click", function(event) {
   event.preventDefault(),
   $.ajax({
     type: 'get',
-    url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city',
+    url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=chicago',
+
     beforeSend: function (request) {
       request.setRequestHeader("Authorization", "Bearer 4UFJIOZKIUA72WMHQGQI")
     },
@@ -27,8 +28,6 @@ $('#search').on("click", function(event) {
 })
 
 $('')
-
-
 
 
 
