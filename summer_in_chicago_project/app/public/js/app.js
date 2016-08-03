@@ -1,6 +1,7 @@
 console.log('working')
 results = document.getElementById('results')
 
+//ajax request to load results from eventbrite api
 $('#search').on("click", function(event) {
   event.preventDefault(),
   $.ajax({
@@ -13,14 +14,8 @@ $('#search').on("click", function(event) {
     success: function(data) {
       var events = data.events;
       for (var i = 0; i < events.length; i++) {
-        $('#results').append('<li><a href="#">' + events[i] + '</li></a>')
+        $('#results').append('<li><a class="event-li" href="#">' + events[i].name.text + '</li></a>')
       }
-      console.log('<----------------this is the data-------------->'),
-      console.log(data),
-      console.log('<----------------this is an event object\'s name-------------->'),
-      console.log(data.events[0].name.text)
-      console.log('<----------------this is an event object-------------->'),
-      console.log(data.events[0]),
       $('body').append(data);
       $('#results').show();
     },
@@ -30,21 +25,14 @@ $('#search').on("click", function(event) {
   });
 })
 
-
-
-$(button).on('click', function() {
-  $.ajax({
-    url: '/home',
-    type: 'Post',
-    data: {},
-    success: function(){
-      console.log(responseFromTheServer)
-    },
-    error: function(){
-      console.log(err)
-    }
-  })
+//when event is clicked, event information is appended
+$('event-li').click(function() {
+  $('#results-li').append('<li>')
 })
+
+
+
+
 
 
 

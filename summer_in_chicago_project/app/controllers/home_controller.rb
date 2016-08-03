@@ -4,9 +4,5 @@ class HomeController < ApplicationController
     erb :event
   end
 
-  post  '/' do 
-    p params.to_json
-
-    'this post request worked'
-  end
+  
 end
