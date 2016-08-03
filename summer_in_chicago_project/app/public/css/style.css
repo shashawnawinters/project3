@@ -1,5 +1,4 @@
 body > header {
-  background: #9DD9D2;
   border-bottom: 2px solid #dedede;
 }
 body > header .container {
@@ -27,9 +26,6 @@ body > header nav ul li {
 body > header nav ul li:last-child {
   margin-right: 5px;
 }
-body > main {
-  background: #9DD9D2;
-}
 body > main form {
   text-align: center;
   padding: 10px;
@@ -47,10 +43,18 @@ body > main form input {
 .mid-section {
   padding-top: 120px;
   padding-bottom: 120px;
-  background: #F4D06F;
+  background-image: url('https://hd.unsplash.com/photo-1467321638755-7246fd0dc1f3');
 }
 h2,
 p {
   color: #272727;
   text-align: center;
+}
+img,
+object,
+embed {
+  max-width: 100%;
+}
+img {
+  height: auto;
 }
