@@ -14,10 +14,19 @@ $('#search').on("click", function(event) {
     dataType: 'json',
     success: function(data) {
       var events = data.events;
-      console.log(events[0])
       for (var i = 0; i < events.length; i++) {
         $('#results').append('<li><a class="event-li" href="#">' + events[i].name.text + '</li></a>')
       }
+      var self = this;
+      $('.event-li').click(function() {
+        console.log(this.innerHTML)
+        console.log(events.indexOf(this).)
+      //   for (var i = 0; i < events.length; i++) {
+      //   $('.results-li').append('<li>' + events[i].name.text + '</li></a>')
+      //   $('.results-li').append('<li>' + events[i].description.text + '</li></a>')
+      // }
+
+      });
       $('body').append(data);
       $('#results').show();
     },
@@ -26,8 +35,6 @@ $('#search').on("click", function(event) {
     }
   });
 })
-
-$('')
 
 
 
