@@ -10,9 +10,7 @@
 @offWhite: #FFF8F0;
 
 body > header {
-  background: @paleBlue;
   border-bottom: 2px solid darken(@white, 10%);
-
 
   .container {
     padding: 0 20px;
@@ -21,8 +19,6 @@ body > header {
   .row {
     padding: 1.5rem 0;
   }
-
-
 
   h1 {
     color: @purple;
@@ -49,7 +45,6 @@ body > header {
 }
 
 body > main {
-  background: @paleBlue;
 
   form {
     text-align: center;
@@ -71,7 +66,7 @@ body > main {
 .mid-section {
   padding-top: 120px;
   padding-bottom: 120px;
-  background: @yellow; 
+  background-image: url('https://hd.unsplash.com/photo-1467321638755-7246fd0dc1f3') 
 }
 
 h2, p {
@@ -79,6 +74,12 @@ h2, p {
   text-align: center;
 }
 
+img, object, embed {
+  max-width: 100%;
+}
 
+img {
+  height: auto;
+}
 
 
