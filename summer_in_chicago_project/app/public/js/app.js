@@ -13,7 +13,7 @@ $('#search').on("click", function(event) {
     success: function(data) {
       var events = data.events;
       for (var i = 0; i < events.length; i++) {
-        $('#results').append('<li><a href="#">' + events[i].name.text + '</li></a>')
+        $('#results').append('<li><a href="#">' + events[i] + '</li></a>')
       }
       console.log('<----------------this is the data-------------->'),
       console.log(data),
