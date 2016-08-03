@@ -6,13 +6,14 @@ $('#search').on("click", function(event) {
   event.preventDefault(),
   $.ajax({
     type: 'get',
-    url: 'https://www.eventbriteapi.com/v3/events/search/',
+    url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city',
     beforeSend: function (request) {
       request.setRequestHeader("Authorization", "Bearer 4UFJIOZKIUA72WMHQGQI")
     },
     dataType: 'json',
     success: function(data) {
       var events = data.events;
+      console.log(events[0])
       for (var i = 0; i < events.length; i++) {
         $('#results').append('<li><a class="event-li" href="#">' + events[i].name.text + '</li></a>')
       }
@@ -26,8 +27,8 @@ $('#search').on("click", function(event) {
 })
 
 //when event is clicked, event information is appended
-$('event-li').click(function() {
-  $('#results-li').append('<li>')
+$('.event-li').click(function() {
+  
 })
 
 
