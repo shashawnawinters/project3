@@ -6,7 +6,7 @@ $('#search').on("click", function(event) {
   event.preventDefault(),
   $.ajax({
     type: 'get',
-    url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=chicago',
+    url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=chicago&price=0',
 
     beforeSend: function (request) {
       request.setRequestHeader("Authorization", "Bearer 4UFJIOZKIUA72WMHQGQI")
@@ -14,6 +14,8 @@ $('#search').on("click", function(event) {
     dataType: 'json',
     success: function(data) {
       var events = data.events;
+      console.log(data)
+      console.log(events[0])
       for (var i = 0; i < events.length; i++) {
         $('#results').append('<li><a class="event-li" href="#">' + events[i].name.text + '</li></a>')
       }
