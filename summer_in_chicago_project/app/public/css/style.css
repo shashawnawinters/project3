@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 body > header {
   border-bottom: 2px solid #dedede;
 }
@@ -22,6 +25,7 @@ body > header nav ul li {
   display: inline-block;
   font-size: 1.3rem;
   margin-right: 1em;
+  margin-bottom: 10px;
 }
 body > header nav ul li:last-child {
   margin-right: 5px;
@@ -41,6 +45,7 @@ body > main form input {
   display: inline-block;
 }
 .mid-section {
+  width: 100%;
   padding-top: 120px;
   padding-bottom: 120px;
   background-image: url('https://hd.unsplash.com/photo-1467321638755-7246fd0dc1f3');

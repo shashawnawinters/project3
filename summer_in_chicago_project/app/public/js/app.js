@@ -32,5 +32,21 @@ $('#search').on("click", function(event) {
 
 
 
+$(button).on('click', function() {
+  $.ajax({
+    url: '/home',
+    type: 'Post',
+    data: {},
+    success: function(){
+      console.log(responseFromTheServer)
+    },
+    error: function(){
+      console.log(err)
+    }
+  })
+})
+
+
+
 
 
