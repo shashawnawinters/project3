@@ -26,10 +26,9 @@ $('#search').on("click", function(event) {
   });
 })
 
-//when event is clicked, event information is appended
-$('.event-li').click(function() {
-  
-})
+$('')
+
+
 
 
 
