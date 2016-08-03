@@ -46,8 +46,8 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/' do
-    erb :event
+  get '/:id' do
+    erb :profile
   end
 
   post '/register/?' do
