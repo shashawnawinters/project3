@@ -41,11 +41,11 @@ $('.search').on("click", function(event) {
           var b = date.shift()
           date.push(b);
           date = date.join('-');
-          var time = myData.events[number.context.parentNode.value].start.local.substr(10, 8).split('T'); 
+          var t = myData.events[number.context.parentNode.value].start.local.substr(10, 9).split('T');
+          t.shift();
+          time = t.toString();
+
           // console.log(number.context.parentNode.value)
-          console.log('-----------------TIME--------------------------')
-          console.log(myData.events[number.context.parentNode.value].start.local)
-          console.log(myData.events[number.context.parentNode.value])
           console.log('-----------------OBJECT NAME--------------------------')
           console.log(myData.events[number.context.parentNode.value].name.text)
           console.log('-----------------OBJECT DESCRIPTION--------------------------')
@@ -55,9 +55,9 @@ $('.search').on("click", function(event) {
           console.log('-----------------OBJECT DATE--------------------------')
           console.log(date)
           console.log('-----------------OBJECT TIME--------------------------')
-          console.log(myData.events[number.context.parentNode.value].start.local)
+          console.log(time)
           console.log('-----------------OBJECT CATEGORY--------------------------')
-          console.log(myData.events[number.context.parentNode.value].logo.url)
+          console.log(myData.events[number.context.parentNode.value].category_id)
     
         })
       }
