@@ -40,20 +40,7 @@ class UsersController < ApplicationController
     redirect '/login'
   end
 
-<<<<<<< HEAD
-  get '/membersonly/?' do
-    p session
-    if session[:is_logged_in]
-      'Hello ' 
-    else
-      'Unauthorized Access'
-    end
-  end
 
-  get '/:id/?' do
-    erb :profile
-  end
-=======
   # get '/membersonly/?' do
   #   p session
   #   if session[:is_logged_in]
@@ -62,7 +49,7 @@ class UsersController < ApplicationController
   #     'Unauthorized Access'
   #   end
   # end
->>>>>>> 8d5839c621cff3a6c9ceef344afad18480f0a95c
+
 
   #Registers a new user and redirects to profile page
   post '/register/?' do
