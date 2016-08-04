@@ -37,7 +37,8 @@ $('.search').on("click", function(event) {
           var myData = grabData()
         
           var number = $(this)
-          var date = myData.events[number.context.parentNode.value].start.local.substr(-10, 9)
+          var date = myData.events[number.context.parentNode.value].start.local.substr(0, 10).split('-').unshift("2016")
+          console.log('-----------------DATE--------------------------')
           console.log(date) 
           // console.log(number.context.parentNode.value)
           console.log(myData.events[number.context.parentNode.value])
