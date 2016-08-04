@@ -45,12 +45,7 @@ $('.search').on("click", function(event) {
     
         })
       }
-      // var self = this;
-      // $('.event-li').click(function() {
-      //   console.log(this)
-      // });
-      // $('body').append(data);
-      // $('#results').show();
+      
     },
     error: function(err) {
       console.log(err);
