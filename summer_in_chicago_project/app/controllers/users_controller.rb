@@ -8,7 +8,14 @@ class UsersController < ApplicationController
   end  
 
   get '/login/?' do
-    erb :login      
+    erb :login
+
+    p session
+    if session[:is_logged_in]
+      'Hello ' 
+    else
+      'Unauthorized Access'
+    end    
   end
 
   post '/login/?' do
@@ -46,7 +53,7 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/:id' do
+  get '/:id/?' do
     erb :profile
   end
 
@@ -74,7 +81,4 @@ class UsersController < ApplicationController
       'Username or Email not long enough' 
     end  
   end
-
-
-
 end

@@ -1,5 +1,9 @@
 body {
+  background: #9DD9D2;
   margin: 0;
+}
+a {
+  color: #392F5A;
 }
 body > header {
   border-bottom: 2px solid #dedede;
