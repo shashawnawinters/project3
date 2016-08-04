@@ -4,7 +4,7 @@ class UsersController < ApplicationController
  	
   #Loads individual user's home profile page
   get '/:id' do |id|
-    user = User.find id
+    user = User.find_by id
     if user
       erb :profile, locals: {username: user.username}
     else
@@ -39,7 +39,6 @@ class UsersController < ApplicationController
     p session
     redirect '/login'
   end
-
 
   # get '/membersonly/?' do
   #   p session

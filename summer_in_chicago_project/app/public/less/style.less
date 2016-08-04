@@ -36,6 +36,7 @@ body > header {
 
   nav{
     ul{
+      visibility: hidden;
       padding: 0;
       margin: 0;
       margin-top: 1.5rem;
@@ -59,7 +60,7 @@ body > main {
   form {
     text-align: center;
     padding:    10px;
-   color:      @black;
+    color:      @black;
 
     input {
       width:    400px;
@@ -85,6 +86,38 @@ h2, p {
   text-align: center;
 }
 
+button  {
+  border-radius: 10px;
+  background-color: @offWhite;
+}
+
+.submit {
+  text-align: center;
+  display: block;
+  margin: 5px auto;
+  width: 150px;
+  height: 75px;
+}
+
+
+//:::: Helper Classes :::://
+
+// The micro clearfix hack (more of a technique than hack)
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+  *zoom:1;
+  
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// A little help for responsive images
 img, object, embed {
   max-width: 100%;
 }
@@ -92,5 +125,3 @@ img, object, embed {
 img {
   height: auto;
 }
-
-
