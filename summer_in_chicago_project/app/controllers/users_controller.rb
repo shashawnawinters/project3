@@ -4,7 +4,7 @@ class UsersController < ApplicationController
  	
   #Loads individual user's home profile page
   get '/:id' do |id|
-    user = User.find_by id
+    user = User.find id
     if user
       erb :profile, locals: {username: user.username}
     else

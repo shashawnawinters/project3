@@ -1,38 +1,50 @@
 
-results = document.getElementById('results');
+
+arr = []
 
 
 //variable to store data from ajax
-var data;
+var Data;
 //ajax request to load results from eventbrite api
 $('.search').on("click", function(event) {
   event.preventDefault(),
   $.ajax({
     type: 'get',
-    async: false,
+    // async: false,
     url: 'https://www.eventbriteapi.com/v3/events/search/?venue.city=chicago&price=0&q=' + $('.searchinput').val(),
     beforeSend: function (request) {
       request.setRequestHeader("Authorization", "Bearer 4UFJIOZKIUA72WMHQGQI")
     },
     dataType: 'json',
     success: function(data) {
-      window.data = data;
+      Data = data;
+
+
       console.log(data)
 
 
 
 
 
+      
 
 
 
 
-
-
-
-      // for (var i = 0; i < events.length; i++) {
-      //   $('#results').append('<li><a class="event-li" href="#">' + events[i].name.text + '</li></a>')
-      // }
+      for (var i = 0; i < data.events.length; i++) {
+        console.log(data.events[i], 'this is data.events[i]')
+        var myOBj = data.events[i].name;
+        $('.results').append('<li value="' + i + '"><a id="event' + i + '"href="#">' + data.events[i].name.text + '</a></li>').on('click', 'a', function(){
+          var myData = grabData()
+        
+          var number = $(this) 
+          console.log(number.context.parentNode.value)
+         
+          console.log(myData.events[number.context.parentNode.value])
+          
+    
+        })
+      }
       // var self = this;
       // $('.event-li').click(function() {
       //   console.log(this)
@@ -44,11 +56,18 @@ $('.search').on("click", function(event) {
       console.log(err);
     }
   });
-  for (var i = 0; i < data.events.length; i++) {
-        console.log(data.events[i].name.text)
-      }
+  // console.log(data.events[0])
 });
 
+$('someElement').click(
+
+  grabData()
+
+  )
+  
+function grabData(){
+  return Data;
+}
 
 
 
