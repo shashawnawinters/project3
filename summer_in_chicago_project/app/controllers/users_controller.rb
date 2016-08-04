@@ -1,23 +1,19 @@
 require 'bcrypt'
 
 class UsersController < ApplicationController
- 		
-
-  get '/register/?' do
-    erb :register
-  end  
-
-  get '/login/?' do
-    erb :login
-
-    p session
-    if session[:is_logged_in]
-      'Hello ' 
+ 	
+  #Loads individual user's home profile page
+  get '/:id' do |id|
+    user = User.find_by id
+    if user
+      erb :profile, locals: {username: user.username}
     else
-      'Unauthorized Access'
-    end    
-  end
+      erb :event, locals: {message: 'No user by that ID found'}
+    end
+    # erb :event
+  end	
 
+  #Logs user in and redirects to profile page
   post '/login/?' do
     user = User.find_by username: params['username']
 
@@ -28,22 +24,23 @@ class UsersController < ApplicationController
         session[:is_logged_in] = true
         session[:user_id] = user.id
         p session
-        'Welcome Back ' + user.username
+        redirect 'users/' + session[:user_id].to_s
       else
-        'Incorrect Username or Password'
+        incorrect = 'Incorrect Username or Password'
+        erb :login, locals: {message: incorrect}
       end
-    else
-      'Username could not be found'
     end
   end
 
-  get '/logout/?' do
+  #Logs user out
+  post '/logout/?' do
     session[:is_logged_in] = false
     session[:user_id] = nil
     p session
-    'You are logged out'
+    redirect '/login'
   end
 
+<<<<<<< HEAD
   get '/membersonly/?' do
     p session
     if session[:is_logged_in]
@@ -56,7 +53,18 @@ class UsersController < ApplicationController
   get '/:id/?' do
     erb :profile
   end
+=======
+  # get '/membersonly/?' do
+  #   p session
+  #   if session[:is_logged_in]
+  #     'Hello ' 
+  #   else
+  #     'Unauthorized Access'
+  #   end
+  # end
+>>>>>>> 8d5839c621cff3a6c9ceef344afad18480f0a95c
 
+  #Registers a new user and redirects to profile page
   post '/register/?' do
     password = BCrypt::Password.create(params['password'])
     if params['username'].length > 1 && params['email'].length >  6
@@ -67,11 +75,11 @@ class UsersController < ApplicationController
       else
         user = User.create username: params['username'], email: params['email'], password: password
         if user 
-          'User was added'
+          # 'User was added'
           session[:is_logged_in] = true
           session[:user_id] = user.id
           p session
-          user.to_json
+          erb :profile, locals: {username: user.username}
           
         else
           'Error'
