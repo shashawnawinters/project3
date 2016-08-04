@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       password = BCrypt::Password.new(user.password)
 
       if password == params['password']
-        session[:is_logged_in] = true
+        session[:is_logged_in] = true 
         session[:user_id] = user.id
         p session
         redirect 'users/' + session[:user_id].to_s
@@ -66,7 +66,6 @@ class UsersController < ApplicationController
           session[:user_id] = user.id
           p session
           erb :profile, locals: {username: user.username}
-          
         else
           'Error'
         end

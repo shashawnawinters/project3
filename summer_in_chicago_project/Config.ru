@@ -10,12 +10,15 @@ ActiveRecord::Base.establish_connection(
 
   )
 
+require './app/models/event'
 require './app/models/user'
 
 require './app/controllers/application_controller'
+require './app/controllers/event_controller'
 require './app/controllers/users_controller'
 require	'./app/controllers/home_controller'
 
+map('/events') { run EventsController }
 map('/users') { run UsersController }
 map('/') { run HomeController }
 
