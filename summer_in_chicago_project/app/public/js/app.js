@@ -32,16 +32,27 @@ $('.search').on("click", function(event) {
 
 
       for (var i = 0; i < data.events.length; i++) {
-        console.log(data.events[i], 'this is data.events[i]')
-        var myOBj = data.events[i].name;
+        // console.log(data.events[i], 'this is data.events[i]')
         $('.results').append('<li value="' + i + '"><a id="event' + i + '"href="#">' + data.events[i].name.text + '</a></li>').on('click', 'a', function(){
           var myData = grabData()
         
-          var number = $(this) 
-          console.log(number.context.parentNode.value)
-         
+          var number = $(this)
+          var date = myData.events[number.context.parentNode.value].start.local.substr(-10, 9)
+          console.log(date) 
+          // console.log(number.context.parentNode.value)
           console.log(myData.events[number.context.parentNode.value])
-          
+          console.log('-----------------OBJECT NAME--------------------------')
+          console.log(myData.events[number.context.parentNode.value].name.text)
+          console.log('-----------------OBJECT DESCRIPTION--------------------------')
+          console.log(myData.events[number.context.parentNode.value].description.text)
+          console.log('-----------------OBJECT IMAGE_URL--------------------------')
+          console.log(myData.events[number.context.parentNode.value].logo.url)
+          console.log('-----------------OBJECT DATE--------------------------')
+          console.log(myData.events[number.context.parentNode.value].start.local)
+          console.log('-----------------OBJECT TIME--------------------------')
+          console.log(myData.events[number.context.parentNode.value].start.local)
+          console.log('-----------------OBJECT CATEGORY--------------------------')
+          console.log(myData.events[number.context.parentNode.value].logo.url)
     
         })
       }
@@ -54,11 +65,6 @@ $('.search').on("click", function(event) {
   // console.log(data.events[0])
 });
 
-$('someElement').click(
-
-  grabData()
-
-  )
   
 function grabData(){
   return Data;
